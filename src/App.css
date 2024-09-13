@@ -14,14 +14,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #acb9d3; */
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
+  /* padding: 5%; */
 }
 
 .App-link {
@@ -36,3 +37,34 @@
     transform: rotate(360deg);
   }
 }
+
+
+.custom-datatable {
+  border: 1px solid black;
+}
+
+
+.responsive-datatable {
+  overflow-x: auto;
+}
+
+.responsive-datatable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-datatable th, .responsive-datatable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 320px) {
+  .responsive-datatable table {
+    font-size: 14px;
+  }
+  .responsive-datatable th, .responsive-datatable td {
+    padding: 5px;
+  }
+}
+
+
