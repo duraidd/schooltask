@@ -143,7 +143,7 @@ function App() {
   const deleteTransaction = (data) => {
     console.log(data);
 
-    axios.post("http://localhost:9999/school/detaData", { _id: data }).then((resDataa) => {
+    axios.post("https://schoolback.vercel.app/school/detaData", { _id: data }).then((resDataa) => {
       if (resDataa.data.status === 200) {
         toast.success(resDataa.data.msg, { autoClose: 1000 })
         setTimeout(() => {
@@ -156,7 +156,7 @@ function App() {
 
 
   const editTransaction = (data) => {
-    axios.post("http://localhost:9999/school/getById", { _id: data }).then((resDataa) => {
+    axios.post("https://schoolback.vercel.app/school/getById", { _id: data }).then((resDataa) => {
       setfour(true);
       setthree({
         _id: resDataa.data.data[0]._id,
@@ -180,7 +180,7 @@ function App() {
 
 
   const getDatafun = () => {
-    axios.post("http://localhost:9999/school/getsingle", { rollno: first })
+    axios.post("https://schoolback.vercel.app/school/getsingle", { rollno: first })
       .then(response => {
         if (response.data.data && response.data.data.length > 0) {
           setsecond(response.data.data);
@@ -197,7 +197,7 @@ function App() {
   const handleAdd = async (e) => {
     e.preventDefault();
     if (four) {
-      axios.post("http://localhost:9999/school/updateData", { data: three }).then((resDataa) => {
+      axios.post("https://schoolback.vercel.app/school/updateData", { data: three }).then((resDataa) => {
         if (resDataa.data.status === 200) {
           toast.success(resDataa.data.msg, { autoClose: 1000 })
           setTimeout(() => {
@@ -208,7 +208,7 @@ function App() {
         }
       })
     } else {
-      axios.post("http://localhost:9999/school/addstudent", { data: dataAdd }).then((resDataa) => {
+      axios.post("https://schoolback.vercel.app/school/addstudent", { data: dataAdd }).then((resDataa) => {
         if (resDataa.data.status === 200) {
           toast.success(resDataa.data.msg, { autoClose: 1000 })
           setTimeout(() => {
